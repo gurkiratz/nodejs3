@@ -1,11 +1,10 @@
 const express = require('express')
 const app = express()
 const PORT = 3000
-const HOST = '0.0.0.0'
-// require('./config/db')
+require('./config/db')
+const adminRoutes = require('./routes/adminRoutes')
 
 app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
 
 app.get('/', (req, res) => {
   res.status(200).json({
@@ -14,7 +13,9 @@ app.get('/', (req, res) => {
   })
 })
 
-app.listen(PORT, HOST, () => {
+app.use('/api/admin', adminRoutes)
+
+app.listen(PORT, () => {
   console.log(`Server started on PORT ${PORT}`)
 })
 
