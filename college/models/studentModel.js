@@ -5,7 +5,7 @@ let studentSchema = new mongoose.Schema({
   email: { type: String, default: '' },
   course: { type: String, default: '' },
   department: { type: String, default: '' },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user', default: null },
 
   createdAt: { type: Date, default: Date.now() },
 })

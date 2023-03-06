@@ -11,12 +11,7 @@ const userSchema = mongoose.Schema({
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
     default: null,
-    ref: 'customer',
-  },
-  teacherId: {
-    type: mongoose.Schema.Types.ObjectId,
-    default: null,
-    ref: 'customer',
+    ref: 'student',
   },
 
   createdAt: { type: Date, default: Date.now() },

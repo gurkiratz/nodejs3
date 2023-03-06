@@ -3,6 +3,7 @@ const app = express()
 const PORT = 3000
 require('./config/db')
 const adminRoutes = require('./routes/adminRoutes')
+const studentRoutes = require('./routes/studentRoutes')
 
 app.use(express.urlencoded({ extended: true }))
 
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/admin', adminRoutes)
+app.use('/api/student', studentRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server started on PORT ${PORT}`)

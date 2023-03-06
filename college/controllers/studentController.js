@@ -1,5 +1,6 @@
-let Student = require('./studentModel')
-let User = require('../user/userModel')
+let bcrypt = require('bcrypt')
+let Student = require('../models/studentModel')
+let User = require('../models/userModel')
 
 exports.register = async (req, res) => {
   try {
@@ -8,22 +9,26 @@ exports.register = async (req, res) => {
     let studentObj = new Student()
     studentObj.name = formData.name
     studentObj.email = formData.email
-    studentObj.city = formData.city
+    studentObj.course = formData.course
+    studentObj.department = formData.department
     let newStuObj = await studentObj.save()
 
     let userObj = new User()
     userObj.name = formData.name
     userObj.email = formData.email
-    userObj.password = formData.password
+    userObj.password = bcrypt.hashSync(formData.password, 10)
     userObj.studentId = newStuObj._id
     userObj.isStudent = true
-    let newUserData = await userObj.save()
+    let newUserObj = await userObj.save()
+
+    newStuObj.userId = newUserObj._id
+    newStuObj.save()
 
     res.status(201).json({
       success: true,
       message: 'New Student registered',
       student: newStuObj,
-      user: newUserData,
+      user: newUserObj,
     })
   } catch (error) {
     res.status(400).json({
