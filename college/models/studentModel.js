@@ -2,7 +2,11 @@ let mongoose = require('mongoose')
 
 let studentSchema = new mongoose.Schema({
   name: { type: String, default: '' },
-  email: { type: String, default: '' },
+  email: {
+    type: String,
+    default: '',
+    unique: [true, 'Student already registered'],
+  },
   course: { type: String, default: '' },
   department: { type: String, default: '' },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user', default: null },
