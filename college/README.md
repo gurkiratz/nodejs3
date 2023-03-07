@@ -1,5 +1,9 @@
 # College Database - with Node and MongoDB
 
+## Postman Collection
+
+[Download](https://downgit.github.io/#/home?url=https://github.com/gurkiratz/nodejs3/blob/main/NodeJS%203.postman_collection.json)
+
 ## API Reference
 
 #### Students
@@ -27,7 +31,3 @@
 ```http
   POST /api/admin/login
 ```
-
-## Authors
-
-- [@gurkiratz](https://www.github.com/gurkiratz)
