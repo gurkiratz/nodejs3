@@ -25,6 +25,7 @@ exports.loginUser = (req, res) => {
           res.status(200).json({
             success: true,
             message: 'login successful',
+            welcome: `Welcome ${userObj.name}`,
           })
         } else {
           res.status(400).json({
