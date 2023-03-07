@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "646ee1f4-99c5-408c-a957-9fd8ba6d87f6",
+		"name": "NodeJS 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24474117"
+	},
+	"item": [
+		{
+			"name": "StudentDB",
+			"item": [
+				{
+					"name": "Register student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Fiz",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fiz@x.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "fiz123",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "city 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/student/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"student",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/student/allStudents",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"student",
+								"allStudents"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ExpenseDB",
+			"item": [
+				{
+					"name": "Expenses",
+					"item": [
+						{
+							"name": "Get All Expenses",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/expense/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"expense",
+										""
+									],
+									"query": [
+										{
+											"key": "amount[gt]",
+											"value": "2000",
+											"disabled": true
+										},
+										{
+											"key": "isPaid",
+											"value": "false",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Expense",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/expense/63fda4b8748bd7db8c523a3d",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"expense",
+										"63fda4b8748bd7db8c523a3d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Expense",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Macbook M1",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "85000",
+											"type": "text"
+										},
+										{
+											"key": "predictedAmount",
+											"value": "90000",
+											"type": "text"
+										},
+										{
+											"key": "isPaid",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "customerId",
+											"value": "63fef28b92c86213a7f70a3a",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/expense",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"expense"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customers",
+					"item": [
+						{
+							"name": "Register Customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Bill",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "bill@x.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "bill123",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "city 1",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "9998555655",
+											"type": "text"
+										},
+										{
+											"key": "occupation",
+											"value": "Business",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/customer",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login user",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CollegeDB",
+			"item": [
+				{
+					"name": "Students",
+					"item": [
+						{
+							"name": "Register student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Gur",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "gur@x.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "gur123",
+											"type": "text"
+										},
+										{
+											"key": "course",
+											"value": "Cloud",
+											"type": "text"
+										},
+										{
+											"key": "department",
+											"value": "Computer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/student/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"student",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/admin/getUsers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"admin",
+										"getUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "gur@x.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "gur123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/admin/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
